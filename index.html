@@ -11,58 +11,73 @@
 
 <body>
 	<div class="container">
-		<div class="inner rounded">
-			<div class="comparison-slider-wrapper">
-				<div class="comparison-slider">
-					<div class="overlay">Output Image</div>
-					<img src="images/13_hazy_dehased.png">
-					<div class="resize">
-						<div class="overlay">Input image</div>
-						<img src="images/13_hazy.png">
-					</div>
-					<div class="divider"></div>
-				</div>
-			</div>
-		</div>
-		<div class="inner rounded">
-			<div class="comparison-slider-wrapper">
-				<div class="comparison-slider">
-					<div class="overlay">Output Image</div>
-					<img src="images/06_hazy_dehased.png">
-					<div class="resize">
-						<div class="overlay">Input image</div>
-						<img src="images/06_hazy.png">
-					</div>
-					<div class="divider"></div>
-				</div>
-			</div>
-		</div>
-		<div class="inner rounded">
-			<div class="comparison-slider-wrapper">
-				<div class="comparison-slider">
-					<div class="overlay">Output Image</div>
-					<img src="images/18_hazy_dehazed.png">
-					<div class="resize">
-						<div class="overlay">Input image</div>
-						<img src="images/18_hazy.png">
-					</div>
-					<div class="divider"></div>
-				</div>
-			</div>
-		</div>
-		<div class="inner rounded">
-			<div class="comparison-slider-wrapper">
-				<div class="comparison-slider">
-					<div class="overlay">Output Image</div>
-					<img src="images/39_hazy_dehazed.png">
-					<div class="resize">
-						<div class="overlay">Input image</div>
-						<img src="images/39_hazy.png">
-					</div>
-					<div class="divider"></div>
-				</div>
-			</div>
-		</div>
+		<script>
+			const imagePairs = [
+				{
+					inputSrc: "images/13_hazy.png",
+					outputSrc: "images/13_hazy_dehased.png",
+					name: "Image 1",
+				},
+				{
+					inputSrc: "images/06_hazy.png",
+					outputSrc: "images/06_hazy_dehased.png",
+					name: "Image 2",
+				},
+				{
+					inputSrc: "images/18_hazy.png",
+					outputSrc: "images/18_hazy_dehazed.png",
+					name: "Image 3",
+				},
+				{
+					inputSrc: "images/39_hazy.png",
+					outputSrc: "images/39_hazy_dehazed.png",
+					name: "Image 4",
+				},
+			];
+
+			const container = document.querySelector(".container");
+
+			imagePairs.forEach((pair) => {
+				const innerDiv = document.createElement("div");
+				innerDiv.className = "inner";
+
+				const comparisonSliderWrapper = document.createElement("div");
+				comparisonSliderWrapper.className = "comparison-slider-wrapper";
+
+				const comparisonSlider = document.createElement("div");
+				comparisonSlider.className = "comparison-slider";
+
+				const overlayOutput = document.createElement("div");
+				overlayOutput.className = "overlay";
+				overlayOutput.textContent = "Output Image";
+
+				const outputImage = document.createElement("img");
+				outputImage.src = pair.outputSrc;
+
+				const resizeDiv = document.createElement("div");
+				resizeDiv.className = "resize";
+
+				const overlayInput = document.createElement("div");
+				overlayInput.className = "overlay";
+				overlayInput.textContent = "Input Image";
+
+				const inputImage = document.createElement("img");
+				inputImage.src = pair.inputSrc;
+
+				const divider = document.createElement("div");
+				divider.className = "divider";
+
+				comparisonSlider.appendChild(overlayOutput);
+				comparisonSlider.appendChild(outputImage);
+				resizeDiv.appendChild(overlayInput);
+				resizeDiv.appendChild(inputImage);
+				comparisonSlider.appendChild(resizeDiv);
+				comparisonSlider.appendChild(divider);
+				comparisonSliderWrapper.appendChild(comparisonSlider);
+				innerDiv.appendChild(comparisonSliderWrapper);
+				container.appendChild(innerDiv);
+			});
+		</script>
 	</div>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	<script src="./script.js"></script>

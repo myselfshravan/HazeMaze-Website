@@ -97,8 +97,8 @@ nav.social li:first-child a {
   margin: 0 auto;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 20px 30px;
-  background-color: #EEE;
+  padding: 10px 20px;
+  background-color: #fefefe;
 }
 
 .comparison-slider-wrapper {
@@ -112,7 +112,7 @@ nav.social li:first-child a {
   position: relative;
   width: 100%;
   margin: 0;
-  border: 5px white solid;
+  /* border: 5px white solid; */
   box-sizing: border-box;
 }
 
@@ -120,6 +120,7 @@ nav.social li:first-child a {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 10px;
 }
 
 .comparison-slider-wrapper .comparison-slider .overlay {
@@ -153,6 +154,7 @@ nav.social li:first-child a {
 
 .comparison-slider-wrapper .comparison-slider .resize>img {
   display: block;
+  border-radius: 10px;
 }
 
 .comparison-slider-wrapper .comparison-slider .resize .overlay {
